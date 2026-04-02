@@ -82,6 +82,9 @@ This project demonstrates that:
 
 ---
 
+## 📄 License
+This project is licensed under the MIT License.
+
 ## 🔗 Notes
 
 - Model training was performed locally
