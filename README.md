@@ -1,4 +1,8 @@
 # Fake News Detection Using NLP and Transformer Models
+# Fake News Detection Using NLP and Transformer Models
+
+## 📊 Project Poster
+![Poster](assetsposter.png)
 
 ## 📌 Project Overview
 
