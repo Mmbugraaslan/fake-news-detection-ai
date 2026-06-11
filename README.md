@@ -242,8 +242,9 @@ fake-news-detection-ai/
 
 ### Muhammet Mustafa Buğra Aslan
 
-Software Engineering Student  
-Machine Learning & Artificial Intelligence Developer
+Data Science and Artificial Intelligence Student
+
+Artificial Intelligence, Machine Learning & Software Development Enthusiast
 
 GitHub: https://github.com/Mmbugraaslan
 
