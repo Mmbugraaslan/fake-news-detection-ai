@@ -2,7 +2,7 @@
 
 ## 📊 Project Poster
 
-![Poster](assetsposter.png)
+![Poster](assetsposter1.png)
 
 # 📰 Fake News Detection AI
 
