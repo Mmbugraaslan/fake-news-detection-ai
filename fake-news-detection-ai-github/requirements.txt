@@ -1,0 +1,14 @@
+pandas
+scikit-learn
+joblib
+transformers
+datasets
+torch
+accelerate
+fastapi
+uvicorn
+pydantic
+kaggle
+pytest
+httpx
+groq
