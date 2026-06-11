@@ -2,6 +2,8 @@
 
 ## 📊 Project Poster
 
+![Poster](assetsposter.png)
+
 # 📰 Fake News Detection AI
 
 > AI-powered fake news detection system using Machine Learning, Transformer Models, and Large Language Models.
