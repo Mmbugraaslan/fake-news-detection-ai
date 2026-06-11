@@ -1,91 +1,255 @@
 # Fake News Detection Using NLP and Transformer Models
 
 ## 📊 Project Poster
-![Poster](assetsposter.png)
 
-## 📌 Project Overview
+# 📰 Fake News Detection AI
 
-This project focuses on detecting whether a news article is **real or fake** using Natural Language Processing (NLP) techniques. 
+> AI-powered fake news detection system using Machine Learning, Transformer Models, and Large Language Models.
 
-We implemented and compared two different approaches:
-- Logistic Regression (traditional Machine Learning)
-- BERT (Transformer-based Deep Learning)
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-REST_API-green)
+![DistilBERT](https://img.shields.io/badge/DistilBERT-Transformer-orange)
+![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-red)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+---
+
+## 🚀 Overview
+
+Fake News Detection AI is a hybrid news classification system that combines traditional Machine Learning, Transformer-based Deep Learning, and Large Language Models (LLMs) to identify whether a news article is **Real** or **Fake**.
+
+Unlike traditional classifiers, this project not only predicts the label but also provides confidence scores and AI-generated explanations.
+
+---
+
+## ✨ Features
+
+- 🤖 DistilBERT Fake News Classifier
+- 📊 TF-IDF + Logistic Regression Baseline
+- 🧠 Groq LLaMA 3.3 70B Reasoning
+- 🔀 Ensemble Prediction System
+- ⚡ FastAPI REST API
+- 🌐 Web-Based Interface
+- 📖 Swagger API Documentation
+- 📈 Confidence Score Calculation
+- 💬 AI-Powered Prediction Explanations
+- 🧪 Automated Testing Structure
+
+---
+
+## 🏗️ System Architecture
+
+```text
+News Article
+      │
+      ▼
+┌────────────────────┐
+│ Logistic Regression│
+└────────────────────┘
+      │
+      ▼
+┌────────────────────┐
+│     DistilBERT     │
+└────────────────────┘
+      │
+      ▼
+┌────────────────────┐
+│  Groq LLaMA 3.3    │
+└────────────────────┘
+      │
+      ▼
+┌────────────────────┐
+│ Ensemble Decision  │
+└────────────────────┘
+      │
+      ▼
+Prediction + Confidence + Explanation
+```
 
 ---
 
 ## 📂 Dataset
 
-We used a public dataset containing real and fake news articles:
-- Fake.csv → Fake news
-- True.csv → Real news
+The models were trained using the Fake and Real News Dataset from Kaggle.
 
-Total dataset size: ~44,000 articles
+| Dataset | Records |
+|----------|----------|
+| Fake News | ~23,000 |
+| Real News | ~21,000 |
+| Total | ~44,000 |
 
----
+### Preprocessing
 
-## ⚙️ Methods
-
-### 1. Logistic Regression
-- Text vectorization using TF-IDF
-- Model: Logistic Regression
-- Achieved high accuracy (~98%)
-
-### 2. BERT (Transformer Model)
-- Model: DistilBERT (pretrained)
-- Fine-tuned on dataset
-- Provides contextual understanding of text
+- Text Cleaning
+- Lowercasing
+- Tokenization
+- TF-IDF Vectorization
+- Train/Test Split
 
 ---
 
-## 🚀 How to Run
+## 📊 Model Performance
 
-### 1. Install dependencies
-pip install pandas numpy scikit-learn transformers torch datasets accelerate
+| Model | Accuracy |
+|---------|---------|
+| DistilBERT | 99.4% |
+| Logistic Regression | 97.4% |
 
-### 2. Run Logistic Regression model
-python main.py
+### Why Ensemble?
 
-### 3. Train BERT model
-python bert_train.py
+Combining multiple models improves:
 
-### 4. Run BERT demo prediction
-python bert_predict.py
-
----
-
-## 📊 Results
-
-- Logistic Regression achieved ~98% accuracy
-- BERT successfully trained on dataset
-- Demonstrated strong contextual understanding
+- Reliability
+- Context Understanding
+- Prediction Stability
+- Explainability
 
 ---
 
-## 🧠 Conclusion
+## 🛠️ Technology Stack
 
-This project demonstrates that:
-- Traditional ML models can perform strongly in text classification tasks
-- Transformer models provide deeper understanding of language
-- Combining both approaches improves overall system performance
+### Backend
+
+- FastAPI
+- Python
+- Pydantic
+
+### Machine Learning
+
+- Scikit-Learn
+- Logistic Regression
+- TF-IDF
+
+### Deep Learning
+
+- PyTorch
+- Hugging Face Transformers
+- DistilBERT
+
+### LLM Integration
+
+- Groq API
+- LLaMA 3.3 70B
 
 ---
 
-## 👥 Team
+## 📡 API Endpoints
 
-**DeepVision Team**
+### Health Check
 
-| Name                         | Index No | Role |
-|-----------------------------|----------|------|
-| Kayra Kireçci               | 20538    | Data Preparation & Presentation |
-| Muhammet Mustafa Buğra Aslan| 20264    | Model Development (ML & BERT) |
-| Miran Aydogdu               | 20527    | Research, Topic Selection & Presentation |
+```http
+GET /health
+```
+
+### Prediction
+
+```http
+POST /predict
+```
+
+Example Request:
+
+```json
+{
+  "text": "Scientists have discovered a new planet capable of supporting life."
+}
+```
+
+Example Response:
+
+```json
+{
+  "prediction": "REAL",
+  "confidence": 98.6,
+  "explanation": "The article contains credible and fact-based language."
+}
+```
 
 ---
 
-## 📄 License
+## ⚙️ Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Mmbugraaslan/fake-news-detection-ai.git
+cd fake-news-detection-ai
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run API
+
+```bash
+uvicorn app.main:app --reload
+```
+
+---
+
+## 🌐 API Documentation
+
+After starting the server, open:
+
+```text
+http://localhost:8000/docs
+```
+
+Swagger UI will automatically display all available endpoints.
+
+---
+
+## 📁 Project Structure
+
+```text
+fake-news-detection-ai/
+│
+├── app/
+│   ├── api/
+│   ├── services/
+│   └── main.py
+│
+├── models/
+│
+├── scripts/
+│
+├── tests/
+│
+├── data/
+│
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🔮 Future Improvements
+
+- Multi-language support
+- Social media misinformation detection
+- Cloud deployment
+- Real-time fact checking
+- Advanced ensemble optimization
+
+---
+
+## 👨‍💻 Developer
+
+### Muhammet Mustafa Buğra Aslan
+
+Software Engineering Student  
+Machine Learning & Artificial Intelligence Developer
+
+GitHub: https://github.com/Mmbugraaslan
+
+---
+
+## 📜 License
+
 This project is licensed under the MIT License.
-
-## 🔗 Notes
 
 - Model training was performed locally
 - Results folder may remain empty (training was done in-memory)
